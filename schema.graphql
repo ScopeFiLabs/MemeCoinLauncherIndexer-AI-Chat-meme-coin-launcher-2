@@ -1,0 +1,24 @@
+type TokenLauncher_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type TokenLauncher_TokenCreated {
+  id: ID!
+  user: String!
+  token: String!
+  symbol: String!
+  name: String!
+  description: String!
+  image: String!
+}
+
+type TokenLauncher_TokenDeployed {
+  id: ID!
+  user: String!
+  token: String!
+  peer: String!
+  chain: BigInt!
+}
+

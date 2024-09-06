@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: memecoinlauncher
+networks:
+- id: 11155420
+  start_block: 0
+  contracts:
+  - name: TokenLauncher
+    address:
+    - 0xe53410eBdd922C0410B645E6bA5FEBe865Ab84d2
+    handler: src/EventHandlers.ts
+    events:
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: TokenCreated(address user, address token, string symbol, string name, string description, string image)
+    - event: TokenDeployed(address user, address token, address peer, uint256 chain)
+rollback_on_reorg: false
